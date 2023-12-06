@@ -21,5 +21,5 @@ from pacientes import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', views.index),
-    path('soldado/<int:soldadoid>', views.soldado)
+    path('soldado/<str:codigo_soldado>', views.soldado)
 ]

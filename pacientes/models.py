@@ -9,6 +9,9 @@ class Soldado(models.Model):
         # Agregar más opciones según sea necesario
     ]
 
+#codigo unico del soldado que se puede insertar por el usuario y tiene por defecto null
+
+    codigo_soldado = models.CharField(max_length=20, unique=True, blank=False, default='')
     nombre = models.CharField(max_length=100)
     rango = models.CharField(max_length=10, choices=GRADO_CHOICES)
     fecha_nacimiento = models.DateField()

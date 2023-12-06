@@ -9,13 +9,14 @@ from .models import Soldado
 def index(request):
     return render(request, 'helloworld.html')
 
-def soldado(request, soldadoid):
-    print(soldadoid)
+def soldado(request, codigo_soldado):
+    print(codigo_soldado)
     #crear objeto json
-    soldado = get_object_or_404(Soldado, id=soldadoid)
+    soldado = get_object_or_404(Soldado, codigo_soldado=codigo_soldado)
  
     return JsonResponse({
             'id': soldado.id,
+            'codigo_soldado': soldado.codigo_soldado,
             'nombre': soldado.nombre,
             'rango': soldado.rango,
             'fecha_nacimiento': str(soldado.fecha_nacimiento),
