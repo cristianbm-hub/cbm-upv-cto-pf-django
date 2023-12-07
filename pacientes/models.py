@@ -21,3 +21,6 @@ class Soldado(models.Model):
     grupo_sanguineo = models.CharField(max_length=5)
     alergias = models.TextField(blank=True, null=True)
     condiciones_medicas = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return self.codigo_soldado+' '+self.nombre
